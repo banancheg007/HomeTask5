@@ -7,6 +7,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_framelayout, MainFragment())
+            .commit()
         setContentView(R.layout.activity_main)
     }
 }

@@ -8,26 +8,38 @@
     <TextView
             android:id="@+id/textview_internet_connection_details"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"/>
+            android:layout_height="75dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:layout_margin="5dp"/>
 
     <TextView
             android:id="@+id/textview_device_charging_state"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:text="@string/please_reconnect_charger"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:layout_margin="5dp"/>
 
     <TextView
             android:id="@+id/textview_headphones_or_headset_plugged"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"/>
+            android:layout_height="75dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:layout_margin="5dp"/>
 
     <TextView
             android:id="@+id/textview_current_date_and_time_zone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"/>
+            android:layout_height="75dp"
+            android:textAlignment="center"
+            android:background="@drawable/back"
+            android:gravity="center"
+            android:layout_margin= "5dp"/>
 
 </LinearLayout>

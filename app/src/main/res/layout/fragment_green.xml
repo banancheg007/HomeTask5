@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/green">
+
+
+    <TextView
+            android:text="@string/please_input_text_in_editText_to_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_text_from_editText"/>
+    <TextView
+            android:text="@string/please_change_off_or_on_to_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_is_switch"/>
+    <TextView
+            android:text="@string/please_press_button_to_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_is_button_pressed"/>
+</LinearLayout>

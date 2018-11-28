@@ -22,6 +22,8 @@ class FragmentSystemInfo: Fragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activity!!.title = "System info"
+        (activity as MainActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         return inflater.inflate(R.layout.fragment_system_info, container, false)
     }
 
@@ -63,7 +65,7 @@ class FragmentSystemInfo: Fragment(){
     fun updateChargingTextView(intent: Intent){
         when(intent.action){
             Intent.ACTION_POWER_CONNECTED -> {
-                textview_device_charging_state.setText("Charging ONN")
+                textview_device_charging_state.setText("Charging ON")
             }
             Intent.ACTION_POWER_DISCONNECTED -> {
                 textview_device_charging_state.setText("Charging OFF")
@@ -83,7 +85,7 @@ class FragmentSystemInfo: Fragment(){
         val timeZone = TimeZone.getDefault()
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
         val timeText =
-            "Current time:  ${simpleDateFormat.format(Date())} Current timezone: ${timeZone.getDisplayName(false, TimeZone.SHORT)}"
+            "Current time:  ${simpleDateFormat.format(Date())} \n Current timezone: ${timeZone.getDisplayName(false, TimeZone.SHORT)}"
         textview_current_date_and_time_zone.setText(timeText)
     }
 

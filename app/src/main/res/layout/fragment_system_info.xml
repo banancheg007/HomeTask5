@@ -15,6 +15,7 @@
             android:id="@+id/textview_device_charging_state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/please_reconnect_charger"
             android:textAlignment="center"/>
 
     <TextView

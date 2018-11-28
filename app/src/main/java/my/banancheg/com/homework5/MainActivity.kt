@@ -12,4 +12,9 @@ class MainActivity : AppCompatActivity() {
             .commit()
         setContentView(R.layout.activity_main)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/blue">
+
+    <EditText
+            android:id="@+id/blue_fragment_editText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+    <Switch
+            android:text="@string/off_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blue__fragment_switch"/>
+    <Button
+            android:text="@string/pressed_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/blue_fragment_button"/>
+</LinearLayout>

@@ -3,4 +3,9 @@
     <string name="system_info">System info</string>
     <string name="fragments_communication">Fragments communication</string>
     <string name="please_reconnect_charger">Please reconnect the charger if it is already connected</string>
+    <string name="off_on">OFF/ON</string>
+    <string name="pressed_button">Pressed button</string>
+    <string name="please_input_text_in_editText_to_update">Please input text to field to update</string>
+    <string name="please_change_off_or_on_to_update">Please change off or on to update</string>
+    <string name="please_press_button_to_update">Please press button to update</string>
 </resources>

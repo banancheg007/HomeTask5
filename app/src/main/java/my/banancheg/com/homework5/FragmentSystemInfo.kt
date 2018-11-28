@@ -13,6 +13,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import kotlinx.android.synthetic.main.fragment_system_info.*
 import my.banancheg.com.homework5.FragmentSystemInfo.SystemBroadcastReceiver
+import java.text.SimpleDateFormat
+import java.util.*
 
 class FragmentSystemInfo: Fragment(){
 
@@ -42,21 +44,31 @@ class FragmentSystemInfo: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        updateInternetTextView()
-        updateChargingTextView()
+            updateInternetTextView()
+        updateChargingTextView(intent = Intent())
         updateHeadPhonesTextView(intent = Intent())
         updateDateAndTimeZoneTextView()
     }
 
     fun updateInternetTextView(){
-        val connectivityManager = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (connectivityManager.activeNetworkInfo.isConnected && connectivityManager.activeNetworkInfo != null) {
+        val connectivityManager = context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (connectivityManager.activeNetworkInfo == null){
+            textview_internet_connection_details.text = "INTERNET OFF"
+        }
+        else if (connectivityManager.activeNetworkInfo.isConnected && connectivityManager.activeNetworkInfo != null) {
             textview_internet_connection_details.text = "INTERNET ON"
-        } else textview_internet_connection_details.text = "INTERNET OFF"
+        }
     }
 
-    fun updateChargingTextView(){
-
+    fun updateChargingTextView(intent: Intent){
+        when(intent.action){
+            Intent.ACTION_POWER_CONNECTED -> {
+                textview_device_charging_state.setText("Charging ONN")
+            }
+            Intent.ACTION_POWER_DISCONNECTED -> {
+                textview_device_charging_state.setText("Charging OFF")
+            }
+        }
     }
 
     fun updateHeadPhonesTextView(intent: Intent){
@@ -68,7 +80,11 @@ class FragmentSystemInfo: Fragment(){
     }
 
     fun updateDateAndTimeZoneTextView(){
-
+        val timeZone = TimeZone.getDefault()
+        val simpleDateFormat = SimpleDateFormat("HH:mm:ss")
+        val timeText =
+            "Current time:  ${simpleDateFormat.format(Date())} Current timezone: ${timeZone.getDisplayName(false, TimeZone.SHORT)}"
+        textview_current_date_and_time_zone.setText(timeText)
     }
 
     inner class SystemBroadcastReceiver : BroadcastReceiver() {
@@ -82,10 +98,10 @@ class FragmentSystemInfo: Fragment(){
                     updateHeadPhonesTextView(intent)
                 }
                 Intent.ACTION_POWER_CONNECTED -> {
-                    updateChargingTextView()
+                    updateChargingTextView(intent)
                 }
                 Intent.ACTION_POWER_DISCONNECTED -> {
-                    updateChargingTextView()
+                    updateChargingTextView(intent)
                 }
                 Intent.ACTION_TIME_CHANGED -> {
                     updateDateAndTimeZoneTextView()

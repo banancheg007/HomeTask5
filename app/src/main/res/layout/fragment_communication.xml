@@ -5,15 +5,19 @@
         android:layout_height="match_parent"
         android:padding="20dp"
         android:orientation="vertical">
-            <FrameLayout
+
+            <fragment
                     android:id="@+id/fragment_blue"
+                    android:name="my.banancheg.com.homework5.BlueFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-            <FrameLayout
+                    android:layout_weight="1" />
+
+            <fragment
                     android:id="@+id/fragment_green"
+                    android:name="my.banancheg.com.homework5.GreenFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
 </LinearLayout>

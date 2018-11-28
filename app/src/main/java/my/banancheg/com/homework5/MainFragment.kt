@@ -35,6 +35,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        activity!!.title = "MySystemApp"
+        (activity as MainActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         super.onViewCreated(view, savedInstanceState)
         button_fragments_communication.setOnClickListener(this)
         button_system_info.setOnClickListener(this)

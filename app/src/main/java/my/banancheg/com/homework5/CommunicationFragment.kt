@@ -9,16 +9,8 @@ import android.view.ViewGroup
 class CommunicationFragment: Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         activity!!.title = "Fragments communication"
+        (activity as MainActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val view: View = inflater!!.inflate(R.layout.fragment_communication, container, false)
-
-        val fragmentTransaction = activity!!.supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_blue, BlueFragment())
-        fragmentTransaction.addToBackStack(null)
-        //fragmentTransaction.commit()
-
-        fragmentTransaction.replace(R.id.fragment_green, GreenFragment())
-        fragmentTransaction.addToBackStack(null)
-        fragmentTransaction.commit()
         return view
     }
 }
